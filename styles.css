@@ -1,0 +1,177 @@
+/* styling for the body */
+body {
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Horizontally center the main div */
+    align-items: center; /* Vertically center the main div */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #f9c9d5, #f7a1b2); /* Gradient background */
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Using Arial font */
+}
+
+/* styling for card and gif */
+.main {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between card and gif */
+}
+
+/* Card styling */
+.card {
+    background: #fff; /* White background */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* shadow */
+    padding: 40px; /* Padding inside the card */
+    text-align: center; /* Center text */
+    width: 400px; /* Fixed width */
+    border: 2px solid #d9534f; /* Red border */
+    position: relative; /* Relative positioning for rest elements */
+    overflow: hidden; /* Hide overflow */
+    animation: popIn 0.6s ease-out; /* Animation for card  */
+}
+
+/* Keyframes for card pop-in animation */
+@keyframes popIn {
+    0% {
+        opacity: 0; /* Start with hidden opacity */
+        transform: scale(0.8); /* Start scaled down */
+    }
+    100% {
+        opacity: 1; /* End with full opacity */
+        transform: scale(1); /* End with normal scale */
+    }
+}
+
+/* Header styling inside the card */
+.card h1 {
+    color: #d9534f; /* Red color for text */
+    font-size: 3em; /* Large font size */
+    margin-bottom: 20px; /* Space below header */
+    font-family: 'Georgia', serif; /* Serif font for header */
+    position: relative; /* Relative positioning */
+    z-index: 1; /* appears above other elements */
+}
+
+/* Paragraph styling inside the card */
+.card p {
+    color: #333; /* Dark color */
+    font-size: 1.3em; /* larger font size */
+    margin-bottom: 20px; /* Space below paragraph */
+    position: relative; /* Relative positioning */
+    z-index: 1; /* appears above other elements */
+}
+
+/* Input field styling */
+input {
+    border: 2px solid #d9534f; /* Red border */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 1.2em; /* Larger font size */
+    padding: 12px; /* Padding inside input */
+    margin: 15px 0; /* Margin top and bottom */
+    width: calc(100% - 26px); /* Full width minus border */
+    transition: border-color 0.3s, box-shadow 0.3s; /*transitions for border and shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*shadow */
+    position: relative; /* Relative positioning */
+    z-index: 1; /* appears above other elements */
+    background: white; /* White background */
+}
+
+/* Input field focus state */
+input:focus {
+    border-color: #c9302c; /* Darker red border on focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+button {
+    background-color: #d9534f; /* Red background */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text color */
+    cursor: pointer; /* changing cursor to pointer on hover */
+    font-size: 1.2em; /* Larger font size */
+    padding: 14px 30px; /* Padding inside button */
+    margin-top: 15px; /* Space above button */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*shadow */
+    position: relative; /* Relative positioning */
+    z-index: 1; /* appears above other elements */
+}
+
+/* Button on hover */
+button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Larger shadow on hover */
+}
+
+/* Hide elements */
+.hidden {
+    display: none; /* Hide elements inside this class */
+}
+
+/* Greeting message styling */
+#GreetingMessage {
+    font-size: 1.4em; /* Larger font size */
+    color: #fff; /* White text color */
+    background: linear-gradient(135deg, #F4D35E, #d9534f); /* Gradient background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside message */
+    margin-top: 20px; /* Space above message */
+    text-align: center; /* Center text */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow */
+    position: relative; /* Relative positioning */
+    z-index: 1; /*appears above other elements */
+    overflow: hidden; /* Hide overflow */
+    border: 2px solid #F4D35E; /* Yellowish border */
+    background-clip: padding-box; /* border color around gradient */
+    animation: slideIn 0.8s ease-out; /* Animation for Greeting appearance */
+}
+
+/* Keyframes for sliding in animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* Start from above */
+        opacity: 0; /* Start with hidden opacity */
+    }
+    to {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+/* Pseudo-element for additional background effect */
+#GreetingMessage::before {
+    content: ""; /* visual effect */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.1); /* little little - transparent background */
+    border-radius: 15px; /* Rounded corners */
+    z-index: -1; /* Behind the message */
+    animation: pulse 2s infinite; /* animation */
+}
+
+/* Keyframes for background effect */
+@keyframes pulse {
+    0% {
+        background: rgba(0, 0, 0, 0.1); /* Start with light background */
+    }
+    50% {
+        background: rgba(0, 0, 0, 0.01); /* Darker background in the middle */
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.1); /* Return to light background */
+    }
+}
+
+/* Loading gif styling */
+#loadingGif {
+    width: 400px; /* Same width as the card */
+    height: 400px; /* Same height as the card */
+    object-fit: contain; /* Cover the area */
+    animation: linear infinite;
+}
